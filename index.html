@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- styles -->
+
+  <meta name="viewport" content="width=device-width, user-scalable=no" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#4285f4">
+  <link rel="apple-touch-icon" href="leaf.png" />
+  <link href="./bootstrap.min.css" rel="stylesheet" media="screen">
+  <script src="./jquery.min.js"></script>
+
+  <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}"> -->
+  <link rel="stylesheet" type="text/css" href="./main.css">
+  <title>Cotton Plant Disease Detection</title>
+
+</head>
+
+<body>
+  <div class="container" style="margin-inline:2%;margin-top:2%">
+    <div class="d-flex justify-content-center align-items-center">
+      <h2>Cotton Plant Disease Detection</h2>
+      <br>
+      <form role="form" id="cpddForm" enctype="multipart/form-data">
+        <div class="form-group">
+          <input type="file" name="image" class="form-control" id="image-input" placeholder="Upload Image"
+            style="max-width: 300px;" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <div class="alert alert-danger" role="alert" style="display:none" id="error_ind">
+        <span class="glyphicon glyphicon-exclamation-sign"></span>
+        <span class="sr-only">Error:</span>
+        <span>There was an error processing your request.<br></span>
+      </div>
+
+      <div class="alert alert-success" role="alert" style="display:none" id="success_ind">
+        <span class="glyphicon glyphicon-exclamation-sign"></span>
+        <span class="sr-only">Success:</span>
+        <span id="success_message"></span>
+      </div>
+    </div>
+  </div>
+  <script src="./main.js"></script>
+  <script>
+    if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+               .register('/sw.js')
+               .then(function() { console.log("Service Worker Registered"); });
+    }
+    </script>
+</body>
+
+</html>
