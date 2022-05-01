@@ -2,7 +2,7 @@ let jobs = {}
 let completed = []
 let errors = []
 url = 'http://localhost:5000'
-url = 'https://sdscoep.com/predict/predict'
+url = 'https://www.cpddextccoep.live/api/predict'
 
 $('#cpddForm').submit(function(e) {
   e.preventDefault();
@@ -12,7 +12,7 @@ $('#cpddForm').submit(function(e) {
   $.ajax({
        type: 'POST',
        crossDomain:true,
-       url: `${url}/predict`,
+       url: `${url}`,
        contentType: 'multipart/form-data',
        data: formData,
        "headers": {
