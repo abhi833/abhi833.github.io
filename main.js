@@ -2,7 +2,7 @@ let jobs = {}
 let completed = []
 let errors = []
 url = 'http://localhost:5000'
-url = 'http://3.80.37.187:5000'
+url = 'https://sdscoep.com/predict/predict'
 
 $('#cpddForm').submit(function(e) {
   e.preventDefault();
